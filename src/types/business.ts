@@ -1,4 +1,5 @@
-﻿export interface BusinessImage { src: string; alt: string }
+﻿export interface SocialLink { platform: string; label: string; url: string }
+export interface BusinessImage { src: string; alt: string }
 export interface BusinessConfig {
   slug: string; name: string; logo: string; description: string; headline: string;
   theme: { background: string; ink: string; accent: string; soft: string };
@@ -7,6 +8,7 @@ export interface BusinessConfig {
   promotion?: { eyebrow: string; title: string; description: string; price?: number; image?: BusinessImage };
   hours?: { days: string; time: string }[];
   address?: string;
-  links?: { directions?: string; phone?: string; socials?: { label: string; url: string }[]; review?: string };
+  links?: { directions?: string; phone?: string; socials?: SocialLink[]; review?: string };
   gallery?: BusinessImage[];
 }
+

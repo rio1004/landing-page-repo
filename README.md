@@ -95,3 +95,11 @@ Optional promotion, hours, address, gallery, and links may be omitted. Menu cate
 Browser visual verification was unavailable in the development session. Manually check 375px phone, tablet, and desktop layouts; horizontal overflow; keyboard focus; View Menu; each category; direct navigation and refresh; unknown slugs; and actual configured contact destinations. Fern & Filter demonstrates missing promotion/gallery/links.
 
 This is a client-rendered Vite app. The local Vite server supplies the application shell for business URLs; configure an equivalent SPA fallback when hosting. Unknown business pages currently display a useful client not-found screen rather than an HTTP 404. Per-business search/social HTML is not implemented; consider prerendering if required. No hosting configuration, deployment, QR creation, or physical NFC testing is included.
+
+### Social profile links
+
+Configure `links.socials` as an array of `{ platform, label, url }` entries. Supported icons: `facebook`, `instagram`, `tiktok`, `youtube`, `x`, `linkedin`, and `pinterest` (case-insensitive). Use `link` or any other platform name for the generic link icon.
+
+Only absolute HTTP/HTTPS URLs with nonempty labels are rendered. Malformed URLs, relative URLs, other protocols, and URLs containing credentials are omitted. If no valid entries remain, the entire section is hidden. Links open a new tab with `noopener noreferrer`. These are profile navigation links; following, liking, and subscribing happen on the destination platform.
+
+The fictional cafés have no real social profiles, so their social sections remain hidden until you supply verified client URLs. No unrelated profiles were added to the demos.

@@ -1,9 +1,11 @@
 # Project: QR/NFC Business Hub
 
 ## Product goal
+
 Build branded, mobile-first business pages that customers open through QR codes, NFC tags, or shared links. Start with a managed service for cafés or salons. Make customer onboarding repeatable through reusable templates and structured content.
 
 ## Stack
+
 - Use React, TypeScript with strict checking, and Vite.
 - Use Tailwind CSS for styling and shared design tokens for colors, typography, spacing, and radii.
 - Use npm and preserve the project's lockfile. Follow existing package versions and conventions when working in an established repository.
@@ -12,11 +14,13 @@ Build branded, mobile-first business pages that customers open through QR codes,
 - Check current official documentation before adding unfamiliar integrations or relying on version-sensitive APIs.
 
 ## Initial scope
+
 Include business identity, description, photos, menu or services, prices, hours, location, contact details, social links, and one prominent primary action.
 
 Booking and ordering may link to a business's existing services. Do not add dashboards, self-service editing, payments, loyalty, inventory, or multi-branch management unless requested.
 
 ## Architecture
+
 - Keep public business content separate from presentation. Adding a customer should primarily require content and theme configuration.
 - Prefer `src/components/`, `src/templates/`, `src/data/businesses/`, `src/types/`, and `src/styles/`, adapting to existing repository conventions.
 - Define a shared `BusinessConfig` type. Model optional sections explicitly and handle missing content gracefully.
@@ -26,6 +30,7 @@ Booking and ordering may link to a business's existing services. Do not add dash
 - Keep configuration files limited to public information. Never place credentials, private customer data, or secrets in client code.
 
 ## Design and content
+
 - Design for phones first, then verify tablet and desktop layouts.
 - Prioritize a clear primary action, readable prices, consistent spacing, and comfortable touch targets.
 - Use supplied brand assets, copy, and visual references. When details are missing, use clearly identified demo content and state assumptions.
@@ -37,6 +42,7 @@ Booking and ordering may link to a business's existing services. Do not add dash
 - Treat search visibility and social previews as explicit requirements. A client-rendered Vite app does not automatically provide complete per-business HTML or metadata. Assess prerendering or a React framework when those requirements arise; explain the tradeoff before a major architecture change.
 
 ## Working approach
+
 - Inspect the relevant existing code before changing it. Preserve user changes and established conventions.
 - Implement small, complete increments with clear acceptance criteria. Use reasonable defaults for reversible choices and briefly state material assumptions.
 - Ask for clarification only when missing information materially affects the result or requires an external commitment.
@@ -45,6 +51,7 @@ Booking and ordering may link to a business's existing services. Do not add dash
 - Do not deploy, purchase services, change live domains, or distribute QR/NFC destinations unless authorized.
 
 ## Verification
+
 - Run available production build, lint, and type-check commands appropriate to the change. Inspect `package.json` for actual scripts rather than assuming they exist.
 - Check affected pages at representative phone and desktop widths. Verify long text, missing optional content, and horizontal overflow.
 - Verify direct navigation and refresh on business routes, plus unknown-slug behavior.
@@ -55,9 +62,11 @@ Booking and ordering may link to a business's existing services. Do not add dash
 - Never claim checks passed unless they ran successfully. Report unavailable checks and remaining limitations explicitly.
 
 ## Completion report
+
 Briefly explain what changed, why it helps, what was verified, and any material limitations or required next steps. When helpful, explain the main data flow in plain language so the owner can maintain the project.
 
 ## Social links
+
 - Keep social links in a configurable array; support any platform.
 - Use accessible labels, platform icons, and a generic icon fallback.
 - Render only configured HTTP/HTTPS links.
@@ -66,3 +75,16 @@ Briefly explain what changed, why it helps, what was verified, and any material 
   follow, like, or subscribe.
 - If analytics are added, report social-link clicks separately
   from confirmed follows, likes, or subscriptions.
+
+  ## Configurable menu display
+
+- Support vertical, horizontal, and paginated menu modes through
+  each business's configuration.
+- Default to vertical when no mode is specified.
+- Use the same menu data and shared item components across modes.
+- Apply pageSize only to paginated mode.
+- Keep mode selection in configuration unless a customer-facing
+  switcher is explicitly requested.
+- Preserve accessibility, responsive layouts, and existing
+  business configurations when changing menu components.
+- Verify every affected mode after modifying shared menu behavior.
