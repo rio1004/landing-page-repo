@@ -119,3 +119,11 @@ Use one of these entries. Omitted/invalid mode falls back to vertical. Invalid p
 All modes use `MenuItemCard` and preserve item ordering, prices, images, and badges. Optional `dietaryLabels: string[]`, `bestSeller: boolean`, and `available: boolean` provide dietary tags, a best-seller label, and an unavailable notice. Empty categories are hidden; an empty menu shows a helpful message.
 
 Run `node scripts/check-menu.mjs` for menu configuration, rendering, content-preservation, and boundary checks. Browser QA checked all modes at 375px and 1440px, vertical sticky jumps, horizontal previous/next, pagination boundaries, category reset, focus, live-status text, and page overflow. Real-device swiping and screen-reader audio remain untested.
+
+### Restaurant template
+
+Open `/b/kusina-ni-juan`. Edit `src/data/businesses/kusina-ni-juan.ts` for menu categories/items, theme, logo initials, cover, promotion, hours, address, gallery, and links. Select `template: 'restaurant'`; existing configurations without a template retain the café template. Restaurants support all three `menuDisplay` modes and the same menu-item/social components.
+
+Optional service links: `links.reservation`, `links.delivery`, `links.ordering`, `links.directions`, and `links.review` accept valid absolute HTTP/HTTPS URLs. Invalid or missing destinations are hidden, and valid external links open with `noopener noreferrer`. `links.phone` enables a telephone action; `links.email` enables an email action. `links.socials` uses the existing platform/label/url array. No real destinations are supplied for the fictional restaurant.
+
+Use `image: { src: '/images/your-dish.jpg', alt: 'Meaningful description' }` on menu items. Add verified client photography under `public/images`; the current stock photos illustrate food/dining and are not the advertised dishes. Optional `allergens`, `dietaryLabels`, `bestSeller`, and `available` are supported. Demo dietary/allergen labels are unverified examples; replace them with client-provided information before delivery.

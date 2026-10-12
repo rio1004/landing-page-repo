@@ -39,10 +39,12 @@ export default function MenuItemCard({
             ))}
           </ul>
         )}
-        {item.available === false && (
+        {!!item.allergens?.length && <p>Sample allergens: {item.allergens.join(", ")}</p>}
+      {item.available === false && (
           <p className="availability">Currently unavailable</p>
         )}
       </div>
     </article>
   );
 }
+

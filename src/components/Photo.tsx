@@ -4,10 +4,12 @@ export function Photo({
   image,
   className = "",
   eager = false,
+  fallbackLabel = "Photo unavailable",
 }: {
   image?: BusinessImage;
   className?: string;
   eager?: boolean;
+  fallbackLabel?: string;
 }) {
   const [failed, setFailed] = useState(false);
   return image && !failed ? (
@@ -24,10 +26,11 @@ export function Photo({
     <div
       className={`photo-fallback ${className}`}
       role="img"
-      aria-label="Coffee illustration; photo unavailable"
+      aria-label={fallbackLabel}
     >
       <span>☕</span>
       <small>A moment for coffee</small>
     </div>
   );
 }
+

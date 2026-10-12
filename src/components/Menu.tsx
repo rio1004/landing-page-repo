@@ -200,9 +200,13 @@ function PaginatedMenu({
 export default function Menu({
   menu,
   display,
+  heading,
+  subtitle,
 }: {
   menu: BusinessConfig["menu"];
-  display?: BusinessConfig["menuDisplay"];
+  display?: BusinessConfig["menuDisplay" ];
+  heading?: string;
+  subtitle?: string;
 }) {
   const categories = menu.filter((category) => category.items.length);
   const { mode, pageSize } = normalizeMenuDisplay(display);
@@ -212,11 +216,11 @@ export default function Menu({
       <div className="section-heading">
         <span className="eyebrow">FIND YOUR USUAL</span>
         <h2>
-          GOOD COFFEE,
+          {heading ?? "GOOD COFFEE,"}
           <br />
-          MADE SIMPLE.
+          {!heading && "MADE SIMPLE."}
         </h2>
-        <p>Something warm. Something sweet. Something for you.</p>
+        <p>{subtitle ?? "Something warm. Something sweet. Something for you."}</p>
       </div>
       {!categories.length ? (
         <p className="empty-menu">
@@ -275,3 +279,4 @@ export default function Menu({
     </section>
   );
 }
+
