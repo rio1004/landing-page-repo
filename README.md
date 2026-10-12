@@ -103,3 +103,19 @@ Configure `links.socials` as an array of `{ platform, label, url }` entries. Sup
 Only absolute HTTP/HTTPS URLs with nonempty labels are rendered. Malformed URLs, relative URLs, other protocols, and URLs containing credentials are omitted. If no valid entries remain, the entire section is hidden. Links open a new tab with `noopener noreferrer`. These are profile navigation links; following, liking, and subscribing happen on the destination platform.
 
 The fictional cafés have no real social profiles, so their social sections remain hidden until you supply verified client URLs. No unrelated profiles were added to the demos.
+
+### Menu browsing modes
+
+Each business can optionally set `menuDisplay` beside `menu`:
+
+```ts
+menuDisplay: { mode: 'vertical' }
+menuDisplay: { mode: 'horizontal' }
+menuDisplay: { mode: 'paginated', pageSize: 8 }
+```
+
+Use one of these entries. Omitted/invalid mode falls back to vertical. Invalid page sizes (including zero, negative numbers, fractions, and strings) fall back to 8; pageSize affects pagination only. Vertical categories stack with sticky jump navigation. Horizontal categories have native swipe/scroll rows with accessible controls. Paginated categories include All, reset on filter changes, and clamp the page when data or page size changes. Page-button clicks focus and reveal the results heading and announce the new page; initial rendering does not trigger scrolling.
+
+All modes use `MenuItemCard` and preserve item ordering, prices, images, and badges. Optional `dietaryLabels: string[]`, `bestSeller: boolean`, and `available: boolean` provide dietary tags, a best-seller label, and an unavailable notice. Empty categories are hidden; an empty menu shows a helpful message.
+
+Run `node scripts/check-menu.mjs` for menu configuration, rendering, content-preservation, and boundary checks. Browser QA checked all modes at 375px and 1440px, vertical sticky jumps, horizontal previous/next, pagination boundaries, category reset, focus, live-status text, and page overflow. Real-device swiping and screen-reader audio remain untested.

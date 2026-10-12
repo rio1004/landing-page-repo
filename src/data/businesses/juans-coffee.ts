@@ -16,6 +16,7 @@ export const juansCoffee: BusinessConfig = {
     src: "/images/coffee.jpg",
     alt: "A warm cup of coffee on a wooden café table",
   },
+  menuDisplay: { mode: "horizontal" },
   menu: [
     {
       id: "coffee",
@@ -23,6 +24,106 @@ export const juansCoffee: BusinessConfig = {
       items: [
         {
           name: "Spanish Latte",
+          description: "Espresso, silky milk & a sweet condensed-milk finish.",
+          price: 165,
+          badge: "HOUSE FAVORITE",
+          image: {
+            src: "/images/latte.jpg",
+            alt: "Latte with delicate foam art",
+          },
+        },
+        {
+          name: "Spanish sss",
+          description: "Espresso, silky milk & a sweet condensed-milk finish.",
+          price: 165,
+          badge: "HOUSE FAVORITE",
+          image: {
+            src: "/images/latte.jpg",
+            alt: "Latte with delicate foam art",
+          },
+        },
+        {
+          name: "Spaniddsh ss",
+          description: "Espresso, silky milk & a sweet condensed-milk finish.",
+          price: 165,
+          badge: "HOUSE FAVORITE",
+          image: {
+            src: "/images/latte.jpg",
+            alt: "Latte with delicate foam art",
+          },
+        },
+        {
+          name: "Spanish asdf",
+          description: "Espresso, silky milk & a sweet condensed-milk finish.",
+          price: 165,
+          badge: "HOUSE FAVORITE",
+          image: {
+            src: "/images/latte.jpg",
+            alt: "Latte with delicate foam art",
+          },
+        },
+        {
+          name: "Spanish ddadsf",
+          description: "Espresso, silky milk & a sweet condensed-milk finish.",
+          price: 165,
+          badge: "HOUSE FAVORITE",
+          image: {
+            src: "/images/latte.jpg",
+            alt: "Latte with delicate foam art",
+          },
+        },
+        {
+          name: "Spanish zccddfsad",
+          description: "Espresso, silky milk & a sweet condensed-milk finish.",
+          price: 165,
+          badge: "HOUSE FAVORITE",
+          image: {
+            src: "/images/latte.jpg",
+            alt: "Latte with delicate foam art",
+          },
+        },
+        {
+          name: "zxcvddd Latte",
+          description: "Espresso, silky milk & a sweet condensed-milk finish.",
+          price: 165,
+          badge: "HOUSE FAVORITE",
+          image: {
+            src: "/images/latte.jpg",
+            alt: "Latte with delicate foam art",
+          },
+        },
+        {
+          name: "zzccdfe Latte",
+          description: "Espresso, silky milk & a sweet condensed-milk finish.",
+          price: 165,
+          badge: "HOUSE FAVORITE",
+          image: {
+            src: "/images/latte.jpg",
+            alt: "Latte with delicate foam art",
+          },
+        },
+        {
+          name: "zcdfe Lxxcdfatte",
+          description: "Espresso, silky milk & a sweet condensed-milk finish.",
+          price: 165,
+          badge: "HOUSE FAVORITE",
+          image: {
+            src: "/images/latte.jpg",
+            alt: "Latte with delicate foam art",
+          },
+        },
+        {
+          name: "zzddrersadf Latte",
+          description: "Espresso, silky milk & a sweet condensed-milk finish.",
+          price: 165,
+          badge: "HOUSE FAVORITE",
+          image: {
+            src: "/images/latte.jpg",
+            alt: "Latte with delicate foam art",
+          },
+        },
+        {
+          name: "zdeqcfd Latte",
           description: "Espresso, silky milk & a sweet condensed-milk finish.",
           price: 165,
           badge: "HOUSE FAVORITE",
