@@ -23,7 +23,11 @@ export function BusinessPage() {
   const { slug } = useParams();
   const business = businesses.find((b) => b.slug === slug);
   return business ? (
-    business.template === "restaurant" ? <RestaurantPage key={business.slug} business={business} /> : <CafePage key={business.slug} business={business} />
+    business.template === "restaurant" ? (
+      <RestaurantPage key={business.slug} business={business} />
+    ) : (
+      <CafePage key={business.slug} business={business} />
+    )
   ) : (
     <NotFound />
   );
@@ -31,4 +35,3 @@ export function BusinessPage() {
 export default function HomePage() {
   return <CafePage business={businesses[0]} />;
 }
-

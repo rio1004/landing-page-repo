@@ -204,7 +204,7 @@ export default function Menu({
   subtitle,
 }: {
   menu: BusinessConfig["menu"];
-  display?: BusinessConfig["menuDisplay" ];
+  display?: BusinessConfig["menuDisplay"];
   heading?: string;
   subtitle?: string;
 }) {
@@ -220,7 +220,9 @@ export default function Menu({
           <br />
           {!heading && "MADE SIMPLE."}
         </h2>
-        <p>{subtitle ?? "Something warm. Something sweet. Something for you."}</p>
+        <p>
+          {subtitle ?? "Something warm. Something sweet. Something for you."}
+        </p>
       </div>
       {!categories.length ? (
         <p className="empty-menu">
@@ -279,4 +281,3 @@ export default function Menu({
     </section>
   );
 }
-
